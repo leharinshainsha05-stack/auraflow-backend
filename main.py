@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from routes import soul_search, project_plan, pitch_deck, file_manager, progress, chat
+from routes import soul_search, project_plan, pitch_deck, file_manager, progress, chat, auth
 
 app = FastAPI(title="AuraFlow AI Backend", version="1.0.0")
 
@@ -21,6 +21,7 @@ app.include_router(pitch_deck.router, prefix="/api")
 app.include_router(file_manager.router, prefix="/api")
 app.include_router(progress.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
+app.include_router(auth.router, prefix="/api")
 
 @app.get("/")
 def root():
