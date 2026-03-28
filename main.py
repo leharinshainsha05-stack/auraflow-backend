@@ -2,6 +2,8 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from routes import soul_search, project_plan, pitch_deck, file_manager, progress, chat, auth, analyze
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI(title="AuraFlow AI Backend", version="1.0.0")
 
